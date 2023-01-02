@@ -44,7 +44,7 @@ HTMl
 
 JS
 
-```
+```js
 var pageContent = $('#pagination-container > div')
 var pagination = $('#pagination')
 
