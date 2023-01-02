@@ -4,11 +4,11 @@ A simple jQuery pagination plugin and 3 CSS themes.
 
 [Read Full Documentation](https://flaviusmatis.github.io/simplePagination.js/)
 
-## Quick link
+## Quick start
 
 Jquery
 
-```htnk
+```html
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 ```
 
