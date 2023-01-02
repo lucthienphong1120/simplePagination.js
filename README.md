@@ -43,9 +43,11 @@ HTMl
 JS
 
 ```js
-$(document).ready(function () {
+$(window).on("load", function() {
     var pageContent = $('#pagination-container > div')
     var pagination = $('#pagination')
+    console.log(pageContent)
+    console.log(pagination)
     pagination.pagination({
         pages: 10,
         cssStyle: 'dark-theme',
