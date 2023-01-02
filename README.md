@@ -15,15 +15,13 @@ Jquery
 JS
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/jquery.simplePagination.min.js" integrity="sha512-J4OD+6Nca5l8HwpKlxiZZ5iF79e9sgRGSf0GxLsL1W55HHdg48AEiKCXqvQCNtA1NOMOVrw15DXnVuPpBm2mPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/jquery.simplePagination.js" integrity="sha512-D8ZYpkcpCShIdi/rxpVjyKIo4+cos46+lUaPOn2RXe8Wl5geuxwmFoP+0Aj6wiZghAphh4LNxnPDiW4B802rjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./simplePagination/jquery.simplePagination.min.js"></script>
 ```
 
 CSS
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/simplePagination.css" integrity="sha512-emkhkASXU1wKqnSDVZiYpSKjYEPP8RRG2lgIxDFVI4f/twjijBnDItdaRh7j+VRKFs4YzrAcV17JeFqX+3NVig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/simplePagination.min.css" integrity="sha512-85KEMf8eFSgiFrs/gGSVg0S6JqrmCtvVcA+s1PTMl/qtqH0ucmhrYrAFXock7iSjCaVcCMUNgCEF+sdQBUp7pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./simplePagination/simplePagination.min.css">
 ```
 
 ## How to use
@@ -45,10 +43,9 @@ HTMl
 JS
 
 ```js
-var pageContent = $('#pagination-container > div')
-var pagination = $('#pagination')
-
-$(function () {
+$(document).ready(function () {
+    var pageContent = $('#pagination-container > div')
+    var pagination = $('#pagination')
     pagination.pagination({
         pages: 10,
         cssStyle: 'dark-theme',
@@ -58,18 +55,17 @@ $(function () {
         },
         onPageClick(pageNumber, event) {
             changePage(pageNumber);
-            
+
         }
     });
-});
-
-function changePage(pageNumber) {
-    for (var page of pageContent) {
-        $(page).addClass('hidden');
+    function changePage(pageNumber) {
+        for (var page of pageContent) {
+            $(page).addClass('hidden');
+        }
+        var currentPage = $('.row.page-' + pageNumber);
+        currentPage.removeClass('hidden');
     }
-    var currentPage = $('.row.page-' + pageNumber);
-    currentPage.removeClass('hidden');
-}
+});
 ```
 
 
